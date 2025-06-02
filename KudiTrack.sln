@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36121.58 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KudiTrack", "KudiTrack\KudiTrack.csproj", "{F9693EC3-EDC0-4296-86C1-9C4B43CB14BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9693EC3-EDC0-4296-86C1-9C4B43CB14BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9693EC3-EDC0-4296-86C1-9C4B43CB14BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9693EC3-EDC0-4296-86C1-9C4B43CB14BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9693EC3-EDC0-4296-86C1-9C4B43CB14BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A89EB07-BD9A-4C66-AE76-0A5E7998FF7C}
+	EndGlobalSection
+EndGlobal
