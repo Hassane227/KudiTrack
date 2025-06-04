@@ -33,6 +33,15 @@ namespace KudiTrack
         protected global::System.Web.UI.WebControls.Label lblUsername;
 
         /// <summary>
+        /// Contrôle btnAddTransactionSidebar.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddTransactionSidebar;
+
+        /// <summary>
         /// Contrôle lblBalance.
         /// </summary>
         /// <remarks>
@@ -58,15 +67,6 @@ namespace KudiTrack
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalExpense;
-
-        /// <summary>
-        /// Contrôle btnAddTransaction.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddTransaction;
 
         /// <summary>
         /// Contrôle gvTransactions.

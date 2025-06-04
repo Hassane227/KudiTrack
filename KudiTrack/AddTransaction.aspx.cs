@@ -70,6 +70,8 @@ namespace KudiTrack
 
                 con.Open();
                 cmd.ExecuteNonQuery();
+                Response.Redirect("Dashboard.aspx");
+
             }
 
             lblMessage.ForeColor = System.Drawing.Color.Green;
