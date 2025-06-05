@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewDepenses.aspx.cs" Inherits="KudiTrack.ViewDepenses" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MesRevenus.aspx.cs" Inherits="KudiTrack.MesRevenus" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Mes Dépenses | KudiTrack</title>
+    <title>Mes Revenus | KudiTrack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
         <div class="sidebar">
             <a class="nav-link" href="Dashboard.aspx">🏠 Dashboard</a>
             <a class="nav-link" href="AddTransaction.aspx">➕ Ajouter Transaction</a>
-            <a class="nav-link active" href="ViewDepenses.aspx">💸 Mes Dépenses</a>
-            <a class="nav-link" href="MesRevenus.aspx">💰 Mes Revenus</a>
+            <a class="nav-link" href="MesDepenses.aspx">💸 Mes Dépenses</a>
+            <a class="nav-link active" href="MesRevenus.aspx">💰 Mes Revenus</a>
             <a class="nav-link" href="Logout.aspx">🚪 Déconnexion</a>
         </div>
 
@@ -64,31 +64,28 @@
             <div class="container my-4">
                 <div class="card">
                     <div class="card-header bg-primary text-white">
-                        <h2 class="text-center m-0">📊 Mes Dépenses</h2>
+                        <h2 class="text-center m-0">💰 Mes Revenus</h2>
                     </div>
                     <div class="card-body">
-                        <asp:Label ID="lblMessage" runat="server" CssClass="text-danger fw-bold"></asp:Label>
+                        <asp:Label ID="lblMessage" runat="server" CssClass="text-success fw-bold"></asp:Label>
 
-                        <asp:GridView ID="gvDepenses" runat="server" AutoGenerateColumns="False"
-                            DataKeyNames="TransactionId"
-                            CssClass="table table-hover mt-3"
-                            GridLines="None"
-                            OnRowEditing="gvDepenses_RowEditing"
-                            OnRowCancelingEdit="gvDepenses_RowCancelingEdit"
-                            OnRowUpdating="gvDepenses_RowUpdating"
-                            OnRowDeleting="gvDepenses_RowDeleting">
+                        <asp:GridView ID="gvRevenus" runat="server" CssClass="table table-hover mt-3"
+                            AutoGenerateColumns="False" EmptyDataText="Aucun revenu trouvé." DataKeyNames="TransactionId"
+                            OnRowEditing="gvRevenus_RowEditing"
+                            OnRowCancelingEdit="gvRevenus_RowCancelingEdit"
+                            OnRowUpdating="gvRevenus_RowUpdating"
+                            OnRowDeleting="gvRevenus_RowDeleting">
 
                             <Columns>
                                 <asp:BoundField DataField="TransactionId" HeaderText="ID" ReadOnly="True" />
-                                <asp:BoundField DataField="CategoryName" HeaderText="Catégorie" />
-                                <asp:BoundField DataField="Amount" HeaderText="Montant (FCFA)" DataFormatString="{0:N2}" />
-                                <asp:BoundField DataField="Description" HeaderText="Description" />
                                 <asp:BoundField DataField="TransactionDate" HeaderText="Date" DataFormatString="{0:dd/MM/yyyy}" />
+                                <asp:BoundField DataField="Description" HeaderText="Description" />
+                                <asp:BoundField DataField="Amount" HeaderText="Montant (FCFA)" DataFormatString="{0:N2}" />
 
-                                <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" 
-                                    EditText='<i class="btn btn-sm btn-warning">✏️ Modifier</i>' 
-                                    DeleteText='<i class="btn btn-sm btn-danger">🗑️ Supprimer</i>' 
-                                    CancelText='<i class="btn btn-sm btn-secondary">❌ Annuler</i>' 
+                                <asp:CommandField ShowEditButton="True" ShowDeleteButton="True"
+                                    EditText='<i class="btn btn-sm btn-warning">✏️ Modifier</i>'
+                                    DeleteText='<i class="btn btn-sm btn-danger">🗑️ Supprimer</i>'
+                                    CancelText='<i class="btn btn-sm btn-secondary">❌ Annuler</i>'
                                     UpdateText='<i class="btn btn-sm btn-success">💾 Enregistrer</i>' />
                             </Columns>
                         </asp:GridView>

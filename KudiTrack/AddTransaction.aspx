@@ -6,99 +6,132 @@
     <title>Ajouter Transaction - KudiTrack</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #0072ff, #00c6ff);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
         }
-
-        .transaction-form {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
+        .sidebar {
+            height: 100vh;
+            width: 220px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #0d6efd; /* Couleur bleue Bootstrap */
+            padding-top: 60px;
+        }
+        .sidebar .nav-link {
+            color: white;
+            font-size: 1.1rem;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .main-content {
+            margin-left: 230px;
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
+        .card {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            background: white;
+            max-width: 600px;
+            margin: 0 auto;
             padding: 30px;
-            width: 100%;
-            max-width: 500px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
-
         h2 {
-            text-align: center;
+            font-weight: 600;
+            color: #0d6efd;
             margin-bottom: 25px;
-            color: #0072ff;
+            text-align: center;
         }
-
         .form-control, .form-select {
             background-color: #fff;
             color: #000;
             border: 1px solid #ccc;
+            border-radius: 6px;
         }
-
         .form-control:focus, .form-select:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
         }
-
         .btn-primary {
-            background-color: #0072ff;
+            background-color: #0d6efd;
             border: none;
-            font-weight: bold;
+            font-weight: 600;
+            padding: 10px 0;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
         }
-
         .btn-primary:hover {
-            background-color: #005dc1;
+            background-color: #0a58ca;
         }
-
         .text-danger {
             text-align: center;
             margin-bottom: 15px;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
-
-
     <form id="form1" runat="server">
-        <div class="transaction-form">
-            <h2>Ajouter une transaction</h2>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <a class="nav-link" href="Dashboard.aspx">🏠 Dashboard</a>
+            <a class="nav-link active" href="AddTransaction.aspx">➕ Ajouter Transaction</a>
+            <a class="nav-link" href="ViewDepenses.aspx">💸 Mes Dépenses</a>
+            <a class="nav-link" href="MesRevenus.aspx">💰 Mes Revenus</a>
+            <a class="nav-link" href="Logout.aspx">🚪 Déconnexion</a>
+        </div>
 
-            <asp:Label ID="lblMessage" runat="server" CssClass="text-danger"></asp:Label>
+        <!-- Contenu principal -->
+        <div class="main-content">
+            <div class="card">
+                <h2>Ajouter une transaction</h2>
 
-            <div class="mb-3">
-                <label for="ddlType" class="form-label">Type</label>
-                <asp:DropDownList ID="ddlType" runat="server" CssClass="form-select">
-                    <asp:ListItem Value="Revenu">Revenu</asp:ListItem>
-                    <asp:ListItem Value="Dépense">Dépense</asp:ListItem>
-                </asp:DropDownList>
-            </div>
+                <asp:Label ID="lblMessage" runat="server" CssClass="text-danger"></asp:Label>
 
-            <div class="mb-3">
-                <label for="ddlCategory" class="form-label">Catégorie</label>
-                <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-select">
-                    <asp:ListItem Text="Sélectionner une catégorie" Value="" />
-                </asp:DropDownList>
-            </div>
+                <div class="mb-3">
+                    <label for="ddlType" class="form-label">Type</label>
+                    <asp:DropDownList ID="ddlType" runat="server" CssClass="form-select">
+                        <asp:ListItem Value="Revenu">Revenu</asp:ListItem>
+                        <asp:ListItem Value="Dépense">Dépense</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
 
-            <div class="mb-3">
-                <label for="txtAmount" class="form-label">Montant</label>
-                <asp:TextBox ID="txtAmount" runat="server" CssClass="form-control" Placeholder="Ex : 1000"></asp:TextBox>
-            </div>
+                <div class="mb-3">
+                    <label for="ddlCategory" class="form-label">Catégorie</label>
+                    <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-select">
+                        <asp:ListItem Text="Sélectionner une catégorie" Value="" />
+                    </asp:DropDownList>
+                </div>
 
-            <div class="mb-3">
-                <label for="txtDescription" class="form-label">Description</label>
-                <asp:TextBox ID="txtDescription" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3" Placeholder="Description de la transaction..."></asp:TextBox>
-            </div>
+                <div class="mb-3">
+                    <label for="txtAmount" class="form-label">Montant</label>
+                    <asp:TextBox ID="txtAmount" runat="server" CssClass="form-control" Placeholder="Ex : 1000"></asp:TextBox>
+                </div>
 
-            <div class="d-grid">
-                <asp:Button ID="btnAdd" runat="server" Text="Ajouter" CssClass="btn btn-primary" OnClick="btnAdd_Click" />
+                <div class="mb-3">
+                    <label for="txtDescription" class="form-label">Description</label>
+                    <asp:TextBox ID="txtDescription" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3" Placeholder="Description de la transaction..."></asp:TextBox>
+                </div>
+
+                <div class="d-grid">
+                    <asp:Button ID="btnAdd" runat="server" Text="Ajouter" CssClass="btn btn-primary" OnClick="btnAdd_Click" />
+                </div>
             </div>
         </div>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     </form>
 </body>
 </html>
