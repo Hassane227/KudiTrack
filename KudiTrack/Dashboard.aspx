@@ -40,7 +40,7 @@
 
         .sidebar .nav-link.active, 
         .sidebar .nav-link:hover {
-            background-color: #495057;
+            background-color: #007bff;
             color: white;
         }
 

@@ -34,6 +34,11 @@
             margin-bottom: 10px;
             display: block;
             transition: background-color 0.3s;
+
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
         }
         .sidebar .nav-link:hover,
         .sidebar .nav-link.active {
