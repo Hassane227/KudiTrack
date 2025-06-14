@@ -79,17 +79,25 @@
             margin-bottom: 15px;
             font-weight: 600;
         }
+        /* Position fixed for toast container */
+        .toast-container {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            z-index: 1080;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <!-- Sidebar -->
         <div class="sidebar">
-            <a class="nav-link" href="Dashboard.aspx">🏠 Dashboard</a>
-            <a class="nav-link active" href="AddTransaction.aspx">➕ Ajouter Transaction</a>
+            <a class="nav-link active" href="Dashboard.aspx">🏠 Tableau de bord</a>
+            <a class="nav-link" href="AddTransaction.aspx">➕ Ajouter Transaction</a>
             <a class="nav-link" href="ViewDepenses.aspx">💸 Mes Dépenses</a>
             <a class="nav-link" href="MesRevenus.aspx">💰 Mes Revenus</a>
-            <a class="nav-link" href="Logout.aspx">🚪 Déconnexion</a>
+            <a class="nav-link" href="Budgets.aspx">💰 Mes Budgets</a>
+            <a class="nav-link" href="Profil.aspx">👤 Mon Profil</a>
         </div>
 
         <!-- Contenu principal -->
@@ -97,7 +105,7 @@
             <div class="card">
                 <h2>Ajouter une transaction</h2>
 
-                <asp:Label ID="lblMessage" runat="server" CssClass="text-danger"></asp:Label>
+                <asp:Label ID="lblMessage" runat="server" CssClass="text-success"></asp:Label>
 
                 <div class="mb-3">
                     <label for="ddlType" class="form-label">Type</label>
@@ -126,6 +134,18 @@
 
                 <div class="d-grid">
                     <asp:Button ID="btnAdd" runat="server" Text="Ajouter" CssClass="btn btn-primary" OnClick="btnAdd_Click" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteneur Toast Bootstrap -->
+        <div class="toast-container" aria-live="polite" aria-atomic="true">
+            <div id="budgetToast" class="toast align-items-center text-bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body" id="toastBody">
+                        <!-- Message dynamique injecté depuis code-behind -->
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fermer"></button>
                 </div>
             </div>
         </div>

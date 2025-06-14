@@ -84,6 +84,8 @@
             <asp:Button ID="btnAddTransactionSidebar" runat="server" Text="➕ Ajouter transaction" CssClass="btn btn-link nav-link text-start" OnClick="btnAddTransaction_Click" />
             <a class="nav-link" href="ViewDepenses.aspx">💸 Mes Dépenses</a>
             <a class="nav-link" href="MesRevenus.aspx">💰 Mes Revenus</a>
+            <a class="nav-link" href="Budgets.aspx">💰 Mes Budgets</a>
+
             <a class="nav-link" href="Profil.aspx">👤 Mon Profil</a>
         </nav>
 

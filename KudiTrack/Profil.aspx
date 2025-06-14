@@ -24,10 +24,16 @@
 
         .sidebar .nav-link {
             color: white;
-            font-size: 1.1rem;
-            padding: 15px 20px;
-            display: block;
-            transition: background-color 0.3s;
+             font-size: 1.1rem;
+             padding: 15px 20px;
+             margin-bottom: 10px;
+             display: block;
+             transition: background-color 0.3s;
+
+             color: #f8f9fa;
+             border-radius: 5px;
+             transition: background-color 0.3s ease;
+             cursor: pointer;
         }
 
         .sidebar .nav-link:hover,
@@ -70,12 +76,13 @@
     <form id="form1" runat="server">
         <!-- Sidebar -->
         <div class="sidebar">
-            <a class="nav-link" href="Dashboard.aspx">🏠 Dashboard</a>
-            <a class="nav-link" href="AddTransaction.aspx">➕ Ajouter Transaction</a>
-            <a class="nav-link" href="MesDepenses.aspx">💸 Mes Dépenses</a>
-            <a class="nav-link" href="MesRevenus.aspx">💰 Mes Revenus</a>
-            <a class="nav-link active" href="Profil.aspx">👤 Mon Profil</a>
-            <a class="nav-link" href="Logout.aspx">🚪 Déconnexion</a>
+          <a class="nav-link active" href="Dashboard.aspx">🏠 Tableau de bord</a>
+        <a class="nav-link" href="AddTransaction.aspx">➕ Ajouter Transaction</a>
+        <a class="nav-link" href="ViewDepenses.aspx">💸 Mes Dépenses</a>
+        <a class="nav-link" href="MesRevenus.aspx">💰 Mes Revenus</a>
+        <a class="nav-link" href="Budgets.aspx">💰 Mes Budgets</a>
+
+        <a class="nav-link" href="Profil.aspx">👤 Mon Profil</a>
         </div>
 
         <!-- Formulaire centré -->

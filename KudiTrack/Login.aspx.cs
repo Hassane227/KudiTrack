@@ -44,6 +44,7 @@ namespace KudiTrack
                     // Stocker les infos utilisateur dans la session
                     Session["UserId"] = userId;
                     Session["Username"] = username;
+                    Session["Email"] = email; //  Ajout du mail
 
                     // Rediriger vers dashboard
                     Response.Redirect("Dashboard.aspx");
